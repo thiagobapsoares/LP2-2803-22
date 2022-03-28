@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+</head>
+<body>
+    <a href="/admin">Voltar</a>
+    <h1>Gallery - Gerenciamentoo de Conteúdo</h1>
+    <h3>Gallery - Adicionar</h3>
+    <form action="" method="post" enctype="multipart/form-data">
+        <label for="imagem">Imagem:</label>
+        <input type="file" name="imagem" id="" required><br>
+        <input type="submit" value="Gravar">
+    </form>
+    <h3>Gallery - Listar</h3>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Preview</th>
+        </tr>
+        <!-- Inserir um loop para exibição da JSON Gallery -->
+        <% for (var n=0; n<dados.length; n++){%>  
+        <tr>
+            <td><%=dados[n].arquivo%></td>
+            <td>
+                <img src="./assets/images/<%=dados[n].arquivo%>" alt=""
+                width="250">
+            </td>
+        </tr>
+        <%}%>
+        <!-- Fim do loop -->
+    </table>
+</body>
+</html>
